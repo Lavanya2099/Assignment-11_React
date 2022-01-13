@@ -1,0 +1,26 @@
+let a = 1+2  =>3
+
+let thunkFunc =()=>{
+    return 1+2   =>3
+}
+
+let a= thunkFunc()
+
+redux is sync.
+actions are sync.
+
+to make actions async. 
+
+
+
+login(){
+return {type:"LOGIN" , payload:"12345"}
+}
+
+
+login(){
+return ()=>{  //thunk
+    fetch("https://www.anywhere.com").then(res=>res.json()).then(data=>{
+        return  {type:"LOGIN" , payload:data}
+    }) 
+}
